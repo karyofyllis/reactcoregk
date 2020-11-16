@@ -10,5 +10,13 @@
     "react"
   ],
   "author": "Giorgos Karyofyllis",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karyofyllis/reactcoregk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/karyofyllis/reactcoregk/issues"
+  },
+  "homepage": "https://github.com/karyofyllis/reactcoregk#readme"
 }
