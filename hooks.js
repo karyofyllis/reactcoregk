@@ -371,6 +371,17 @@ const useSortHandler = (by = "", direction = "asc") => {
     };
 };
 
+const useEntityFetch = (context, entityType, fetchData, storeId) => {
+    const results = context[entityType].getAll.result.length;
+    const isLoading = context[entityType].getAll.isLoading;
+    useEffect(() => {
+        if (results === 0 && !isLoading) {
+            fetchData();
+        }
+    }, [fetchData, isLoading, results, storeId]);
+
+    return context[entityType].getAll.isLoading;
+};
 
 export {
     useAutoUpdate,
@@ -386,4 +397,5 @@ export {
     useDropzone,
     usePaging,
     useSortHandler,
+    useEntityFetch
 };
