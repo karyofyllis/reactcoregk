@@ -17,7 +17,7 @@ import {
     createPutSuccessMethod,
 } from "./actions";
 import {customEntityGen, delEntityGen, fetchAllGen, fetchEntityGen, postEntityGen, putEntityGen,} from "./factory";
-import {Operation} from "./operation";
+import {Operation} from "./Operation";
 
 const getEntitySuccess = (entityType, result) => createGetSuccessMethod(entityType, result);
 const getEntityFailure = (entityType, result) => createGetFailureMethod(entityType, result);

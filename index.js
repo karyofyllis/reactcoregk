@@ -1,6 +1,6 @@
 import * as hooks from './hooks'
 import * as utils from "./utils"
-import * as actions from '/store/actions'
+import * as actions from './store/actions'
 import * as actionTypes from "./store/actionTypes"
 import * as api from "./store/api"
 import * as factory from "./store/factory"

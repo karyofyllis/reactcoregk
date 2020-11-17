@@ -385,6 +385,5 @@ export {
     useMasterDetailWithDialog,
     useDropzone,
     usePaging,
-    useWebSocket,
     useSortHandler,
 };
