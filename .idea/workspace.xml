@@ -11,10 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91f20045-391e-4695-900b-49c77bd5f117" name="Default Changelist" comment="Revert">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/hooks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/saga.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +46,7 @@
       <workItem from="1605541643644" duration="754000" />
       <workItem from="1605542412040" duration="223000" />
       <workItem from="1605624293591" duration="24000" />
-      <workItem from="1605626927179" duration="1317000" />
+      <workItem from="1605626927179" duration="1439000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1605542234379</created>
@@ -65,7 +62,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605624299583</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fix sagas.&#10;Remove websockets.">
+      <created>1605628343429</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605628343429</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,18 +90,19 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Update version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update version" />
+    <MESSAGE value="Fix sagas.&#10;Remove websockets." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix sagas.&#10;Remove websockets." />
   </component>
   <component name="WindowStateProjectService">
     <state x="597" y="540" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605535265067">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="597" y="540" key="#com.intellij.fileTypes.FileTypeChooser/551.1463.1440.821/0.23.2560.1417@0.23.2560.1417" timestamp="1605535265067" />
-    <state x="213" y="411" key="Vcs.Push.Dialog.v2" timestamp="1605624302030">
+    <state x="213" y="411" key="Vcs.Push.Dialog.v2" timestamp="1605628346556">
       <screen x="0" y="23" width="2560" height="1341" />
     </state>
     <state x="213" y="433" key="Vcs.Push.Dialog.v2/551.1463.1440.821/0.23.2560.1417@0.23.2560.1417" timestamp="1605542277358" />
-    <state x="213" y="411" key="Vcs.Push.Dialog.v2/551.1463.1440.877/0.23.2560.1341@0.23.2560.1341" timestamp="1605624302030" />
+    <state x="213" y="411" key="Vcs.Push.Dialog.v2/551.1463.1440.877/0.23.2560.1341@0.23.2560.1341" timestamp="1605628346556" />
     <state x="426" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605542414810">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
