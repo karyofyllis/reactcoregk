@@ -43,7 +43,7 @@ const getAllEntitiesGen = (entity, ApiEndpoint, {params}) =>
 
 const getAllPageableEntitiesGen = (entity, ApiEndpoint, {params}) =>
   fetchAllGen(
-      ApiEndpoint,
+      ApiEndpoint[entity],
       params,
     (result) => getAllPageableEntitySuccess(entity, result),
     (result) => getAllPageableEntityFailure(entity, result)
@@ -51,7 +51,7 @@ const getAllPageableEntitiesGen = (entity, ApiEndpoint, {params}) =>
 
 const getEntityGen = (entity, ApiEndpoint, { params }) =>
   fetchEntityGen(
-    ApiEndpoint,
+    ApiEndpoint[entity],
     params,
     (result) => getEntitySuccess(entity, result),
     (result) => getEntityFailure(entity, result)
@@ -59,7 +59,7 @@ const getEntityGen = (entity, ApiEndpoint, { params }) =>
 
 const createEntityGen = (entity, ApiEndpoint, { payload }) =>
   postEntityGen(
-    ApiEndpoint,
+    ApiEndpoint[entity],
     payload,
     (result) => createEntitySuccess(entity, result),
     (result) => createEntityFailure(entity, result)
@@ -67,7 +67,7 @@ const createEntityGen = (entity, ApiEndpoint, { payload }) =>
 
 const updateEntityGen = (entity, ApiEndpoint, { payload }) =>
   putEntityGen(
-    ApiEndpoint,
+    ApiEndpoint[entity],
     payload,
     (result) => updateEntitySuccess(entity, result),
     (result) => updateEntityFailure(entity, result)
@@ -75,7 +75,7 @@ const updateEntityGen = (entity, ApiEndpoint, { payload }) =>
 
 const deleteEntityGen = (entity, ApiEndpoint, { payload }) =>
   delEntityGen(
-    ApiEndpoint,
+    ApiEndpoint[entity],
     payload,
     (result) => deleteEntitySuccess(entity, result),
     (result) => deleteEntityFailure(entity, result)
@@ -86,12 +86,12 @@ const customEntity = (entity, { payload }) =>
 
 export function* watchAllEntities(entity, ApiEndpoint) {
   const actionType = buildActionType(entity, ActionTypes.GET_ALL);
-  yield takeEvery(actionType, (params) => getAllEntitiesGen(entity, params));
+  yield takeEvery(actionType, (params) => getAllEntitiesGen(entity, ApiEndpoint, params));
 }
 
 export function* watchAllPageableEntities(entity, ApiEndpoint) {
   const actionType = buildActionType(entity, ActionTypes.GET_ALL_PAGEABLE);
-  yield takeEvery(actionType, (params) => getAllPageableEntitiesGen(entity, params));
+  yield takeEvery(actionType, (params) => getAllPageableEntitiesGen(entity, ApiEndpoint, params));
 }
 
 export function* watchEntityById(entity, ApiEndpoint) {
