@@ -285,8 +285,8 @@ const useListToggle = () => {
     return [isList, toggle];
 };
 
-const useMasterDetailWithDialog = (schema, entityType) => {
-    const [entity, setEntity] = useState(Schema[entityType]);
+const useMasterDetailWithDialog = (initialState) => {
+    const [entity, setEntity] = useState(initialState);
     const [openModal, setOpenModal] = useState(false);
     const [openDelete, setOpenDelete] = useState(false)
 
@@ -301,9 +301,9 @@ const useMasterDetailWithDialog = (schema, entityType) => {
     };
 
     const handleCreateNew = useCallback(() => {
-        setEntity(Schema[entityType]);
+        setEntity(initialState);
         setOpenModal(true);
-    }, [entityType]);
+    }, [initialState]);
 
     const handleCloseModal = () => setOpenModal(false);
     const handleCloseDeleteModal = () => setOpenDelete(false);
