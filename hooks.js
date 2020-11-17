@@ -371,16 +371,16 @@ const useSortHandler = (by = "", direction = "asc") => {
     };
 };
 
-const useEntityFetch = (context, entityType, fetchData, storeId) => {
-    const results = context[entityType].getAll.result.length;
-    const isLoading = context[entityType].getAll.isLoading;
+const useEntityFetch = (context, fetchData, fetchDependency) => {
+    const results = context.getAll.result.length;
+    const isLoading = context.getAll.isLoading;
     useEffect(() => {
         if (results === 0 && !isLoading) {
             fetchData();
         }
-    }, [fetchData, isLoading, results, storeId]);
+    }, [fetchData, isLoading, results, fetchDependency]);
 
-    return context[entityType].getAll.isLoading;
+    return context.getAll.isLoading;
 };
 
 export {
