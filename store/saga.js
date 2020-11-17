@@ -1,5 +1,5 @@
 import {fork, takeEvery,} from "redux-saga/effects";
-import * as ActionTypes from "../core/actionTypes";
+import * as ActionTypes from "./actionTypes";
 import {
     buildActionType,
     createCustomAction,
@@ -17,7 +17,6 @@ import {
     createPutSuccessMethod,
 } from "./actions";
 import {customEntityGen, delEntityGen, fetchAllGen, fetchEntityGen, postEntityGen, putEntityGen,} from "./factory";
-import {ApiEndpoint} from "./endpoint";
 import {Operation} from "./operation";
 
 const getEntitySuccess = (entityType, result) => createGetSuccessMethod(entityType, result);
@@ -34,49 +33,49 @@ const deleteEntitySuccess = (entityType, result) => createDeleteSuccessMethod(en
 const deleteEntityFailure = (entityType, result) => createDeleteFailureMethod(entityType, result);
 const customAction = (entityType, result) => createCustomAction(entityType, result);
 
-const getAllEntitiesGen = (entity, {params}) =>
+const getAllEntitiesGen = (entity, ApiEndpoint, {params}) =>
   fetchAllGen(
-    ApiEndpoint[entity],
+      ApiEndpoint[entity],
       params,
     (result) => getAllEntitySuccess(entity, result),
     (result) => getAllEntityFailure(entity, result)
   );
 
-const getAllPageableEntitiesGen = (entity, {params}) =>
+const getAllPageableEntitiesGen = (entity, ApiEndpoint, {params}) =>
   fetchAllGen(
-    ApiEndpoint[entity],
+      ApiEndpoint,
       params,
     (result) => getAllPageableEntitySuccess(entity, result),
     (result) => getAllPageableEntityFailure(entity, result)
   );
 
-const getEntityGen = (entity, { params }) =>
+const getEntityGen = (entity, ApiEndpoint, { params }) =>
   fetchEntityGen(
-    ApiEndpoint[entity],
+    ApiEndpoint,
     params,
     (result) => getEntitySuccess(entity, result),
     (result) => getEntityFailure(entity, result)
   );
 
-const createEntityGen = (entity, { payload }) =>
+const createEntityGen = (entity, ApiEndpoint, { payload }) =>
   postEntityGen(
-    ApiEndpoint[entity],
+    ApiEndpoint,
     payload,
     (result) => createEntitySuccess(entity, result),
     (result) => createEntityFailure(entity, result)
   );
 
-const updateEntityGen = (entity, { payload }) =>
+const updateEntityGen = (entity, ApiEndpoint, { payload }) =>
   putEntityGen(
-    ApiEndpoint[entity],
+    ApiEndpoint,
     payload,
     (result) => updateEntitySuccess(entity, result),
     (result) => updateEntityFailure(entity, result)
   );
 
-const deleteEntityGen = (entity, { payload }) =>
+const deleteEntityGen = (entity, ApiEndpoint, { payload }) =>
   delEntityGen(
-    ApiEndpoint[entity],
+    ApiEndpoint,
     payload,
     (result) => deleteEntitySuccess(entity, result),
     (result) => deleteEntityFailure(entity, result)
@@ -85,34 +84,34 @@ const deleteEntityGen = (entity, { payload }) =>
 const customEntity = (entity, { payload }) =>
   customEntityGen(payload, (result) => customAction(entity, result));
 
-export function* watchAllEntities(entity) {
+export function* watchAllEntities(entity, ApiEndpoint) {
   const actionType = buildActionType(entity, ActionTypes.GET_ALL);
   yield takeEvery(actionType, (params) => getAllEntitiesGen(entity, params));
 }
 
-export function* watchAllPageableEntities(entity) {
+export function* watchAllPageableEntities(entity, ApiEndpoint) {
   const actionType = buildActionType(entity, ActionTypes.GET_ALL_PAGEABLE);
   yield takeEvery(actionType, (params) => getAllPageableEntitiesGen(entity, params));
 }
 
-export function* watchEntityById(entity) {
+export function* watchEntityById(entity, ApiEndpoint) {
   const actionType = buildActionType(entity, ActionTypes.GET);
-  yield takeEvery(actionType, (params) => getEntityGen(entity, params));
+  yield takeEvery(actionType, (params) => getEntityGen(entity, ApiEndpoint, params));
 }
 
-export function* watchEntityCreation(entity) {
+export function* watchEntityCreation(entity, ApiEndpoint) {
   const actionType = buildActionType(entity, ActionTypes.POST);
-  yield takeEvery(actionType, (payload) => createEntityGen(entity, payload));
+  yield takeEvery(actionType, (payload) => createEntityGen(entity, ApiEndpoint, payload));
 }
 
-export function* watchEntityUpdate(entity) {
+export function* watchEntityUpdate(entity, ApiEndpoint) {
   const actionType = buildActionType(entity, ActionTypes.UPDATE);
-  yield takeEvery(actionType, (payload) => updateEntityGen(entity, payload));
+  yield takeEvery(actionType, (payload) => updateEntityGen(entity, ApiEndpoint, payload));
 }
 
-export function* watchEntityDelete(entity) {
+export function* watchEntityDelete(entity, ApiEndpoint) {
   const actionType = buildActionType(entity, ActionTypes.DELETE);
-  yield takeEvery(actionType, (payload) => deleteEntityGen(entity, payload));
+  yield takeEvery(actionType, (payload) => deleteEntityGen(entity, ApiEndpoint, payload));
 }
 
 export function* watchEntityCustom(entity) {
@@ -120,20 +119,20 @@ export function* watchEntityCustom(entity) {
   yield takeEvery(actionType, (payload) => customEntity(entity, payload));
 }
 
-function getCoreSagas(entityType, entityOperations) {
+function getCoreSagas(entityType, ApiEndpoint, entityOperations) {
   const coreSagas = [];
   if (entityOperations.includes(Operation.get))
-    coreSagas.push(fork(() => watchEntityById(entityType)));
+    coreSagas.push(fork(() => watchEntityById(entityType, ApiEndpoint)));
   if (entityOperations.includes(Operation.getAll))
-    coreSagas.push(fork(() => watchAllEntities(entityType)));
+    coreSagas.push(fork(() => watchAllEntities(entityType, ApiEndpoint)));
   if (entityOperations.includes(Operation.getAllPageable))
-    coreSagas.push(fork(() => watchAllPageableEntities(entityType)));
+    coreSagas.push(fork(() => watchAllPageableEntities(entityType, ApiEndpoint)));
   if (entityOperations.includes(Operation.create))
-    coreSagas.push(fork(() => watchEntityCreation(entityType)));
+    coreSagas.push(fork(() => watchEntityCreation(entityType, ApiEndpoint)));
   if (entityOperations.includes(Operation.update))
-    coreSagas.push(fork(() => watchEntityUpdate(entityType)));
+    coreSagas.push(fork(() => watchEntityUpdate(entityType, ApiEndpoint)));
   if (entityOperations.includes(Operation.delete))
-    coreSagas.push(fork(() => watchEntityDelete(entityType)));
+    coreSagas.push(fork(() => watchEntityDelete(entityType, ApiEndpoint)));
   if (entityOperations.includes(Operation.custom))
     coreSagas.push(fork(() => watchEntityCustom(entityType)));
   return coreSagas;

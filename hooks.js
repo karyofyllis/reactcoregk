@@ -1,7 +1,5 @@
 import {useCallback, useEffect, useMemo, useRef, useState,} from "react";
 import {fetchData, formatBytes, getToken,} from "./utils";
-import * as SockJS from "sockjs-client";
-import * as StompJs from "stompjs";
 import Paging from "./models/Paging";
 
 const useAutoUpdate = (initial, changed, update, timeout = 1000) => {
@@ -345,53 +343,6 @@ const useDropzone = (onFilesDrop) => {
         selectedFiles,
         handleAcceptedFiles,
         setSelectedFiles,
-    };
-};
-
-const useWebSocket = (url, isReady) => {
-    const clientRef = useRef();
-    const retries = useRef(10);
-    const isInProgress = useRef(false);
-
-    const [connected, setConnected] = useState(false);
-
-    const onConnect = () => {
-        setConnected(true);
-        retries.current = retries.current - 1;
-        isInProgress.current = false;
-    };
-
-    const onDisconnect = (error) => {
-        if (retries.current > 0) {
-            if (!isInProgress.current) {
-                console.log("STOMP: " + error);
-                console.log("STOMP: Reconecting in 5 seconds");
-                setConnected(false);
-                isInProgress.current = true;
-                setTimeout(connect, 5000);
-            }
-        } else {
-            console.log("STOMP: Failed to connect after 10 tries. Exit.");
-        }
-    };
-
-    const connect = () => {
-        const headers = { Authorization: "Bearer " + getToken() };
-        const socket = new SockJS(url);
-        clientRef.current = StompJs.over(socket);
-        clientRef.current.connect(headers, onConnect, onDisconnect);
-    };
-
-    useEffect(() => {
-        if (isReady) {
-            connect();
-        }
-        // eslint-disable-next-line
-    }, [isReady]);
-
-    return {
-        clientRef,
-        connected,
     };
 };
 
