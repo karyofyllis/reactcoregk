@@ -6,7 +6,7 @@ React core gk libary is a set of generic functions designed to work with redux a
 
 ## Installation
 
-Use npm to install foobar.
+Use npm to install.
 
 ```bash
 npm install reactcoregk
