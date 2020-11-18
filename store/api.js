@@ -30,7 +30,7 @@ const postEntity = async (url, data) => {
 const putEntity = async (url, data) => {
     // const finalUrl = url + '/' + data.id
     return axios
-        .post(url, data)
+        .put(url, data)
         .then((response) => {
             return response.data;
         })

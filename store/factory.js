@@ -1,5 +1,6 @@
 import {call, put} from "redux-saga/effects";
 import {deleteEntity, fetchAll, fetchEntity, postEntity, putEntity,} from "./api";
+import ApiHandler from "../models/apiHandler";
 
 
 export function* fetchAllGen(url, params, successCallback, errorCallback) {
@@ -24,10 +25,10 @@ export function* fetchEntityGen(url, params, successCallback, errorCallback) {
 
 export function* postEntityGen(url, options, successCallback, errorCallback) {
     const data = options.payload
-    const apiHandler = options.apiHandler
+    const apiHandler = options.apiHandler || new ApiHandler()
     try {
         const response = yield call(postEntity, url, data);
-        if (apiHandler?.refreshId) {
+        if (apiHandler.refreshId) {
             const entityUrl = url + "/" + response.id;
             const entity = yield call(fetchEntity, entityUrl);
             yield put(successCallback(entity));
@@ -42,14 +43,15 @@ export function* postEntityGen(url, options, successCallback, errorCallback) {
 
 export function* putEntityGen(url, options, successCallback, errorCallback) {
     const data = options.payload
-    const apiHandler = options.apiHandler
+    const apiHandler = options.apiHandler || new ApiHandler()
     let finalUrl = url;
-    if (apiHandler?.appendId) {
+    if (apiHandler.appendId) {
         finalUrl += "/" + data.id;
     }
+    const requestEntity = apiHandler.method = "POST" ? postEntity : putEntity
     try {
-        const result = yield call(putEntity, finalUrl, data);
-        if (apiHandler?.refreshId) {
+        const result = yield call(requestEntity, finalUrl, data);
+        if (apiHandler.refreshId) {
             const entityUrl = url + "/" + data.id;
             const entity = yield call(fetchEntity, entityUrl);
             yield put(successCallback(entity));
