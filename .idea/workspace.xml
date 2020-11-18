@@ -10,8 +10,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91f20045-391e-4695-900b-49c77bd5f117" name="Default Changelist" comment="Rename readme">
+    <list default="true" id="91f20045-391e-4695-900b-49c77bd5f117" name="Default Changelist" comment="Update version">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +61,8 @@
       <workItem from="1605695891357" duration="1380000" />
       <workItem from="1605704772082" duration="1461000" />
       <workItem from="1605711877656" duration="224000" />
-      <workItem from="1605712524677" duration="69000" />
+      <workItem from="1605712524677" duration="109000" />
+      <workItem from="1605714026700" duration="51000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1605542234379</created>
@@ -173,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605712576288</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Update version">
+      <created>1605712615648</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1605712615648</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +204,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Fix sagas.&#10;Remove websockets." />
-    <MESSAGE value="Update version" />
     <MESSAGE value="Fix imports" />
     <MESSAGE value="Fix sagas" />
     <MESSAGE value="add useEntityFetch hook" />
@@ -206,7 +215,8 @@
     <MESSAGE value="Add readme" />
     <MESSAGE value="Add dependencies" />
     <MESSAGE value="Rename readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename readme" />
+    <MESSAGE value="Update version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update version" />
   </component>
   <component name="WindowStateProjectService">
     <state x="78" y="309" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605696672509">
@@ -217,10 +227,10 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="597" y="540" key="#com.intellij.fileTypes.FileTypeChooser/551.1463.1440.821/0.23.2560.1417@0.23.2560.1417" timestamp="1605535265067" />
-    <state x="213" y="411" key="Vcs.Push.Dialog.v2" timestamp="1605711698984">
-      <screen x="0" y="23" width="2560" height="1341" />
+    <state x="213" y="433" key="Vcs.Push.Dialog.v2" timestamp="1605712619741">
+      <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="213" y="433" key="Vcs.Push.Dialog.v2/551.1463.1440.821/0.23.2560.1417@0.23.2560.1417" timestamp="1605696651234" />
+    <state x="213" y="433" key="Vcs.Push.Dialog.v2/551.1463.1440.821/0.23.2560.1417@0.23.2560.1417" timestamp="1605712619741" />
     <state x="213" y="433" key="Vcs.Push.Dialog.v2/551.1463.1440.822/0.23.2560.1417@0.23.2560.1417" timestamp="1605645054067" />
     <state x="213" y="411" key="Vcs.Push.Dialog.v2/551.1463.1440.877/0.23.2560.1341@0.23.2560.1341" timestamp="1605711698984" />
     <state x="426" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605542414810">

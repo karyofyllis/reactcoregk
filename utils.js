@@ -1,27 +1,5 @@
 import axios from "axios";
 
-axios.defaults.headers.common = {
-    Authorization: "Bearer " + getToken(),
-};
-
-export function getAxiosConfig() {
-    return {
-        headers: {
-            Authorization: "Bearer " + getToken(),
-        },
-    };
-}
-
-export function getToken() {
-    const userAuth = localStorage.getItem("authUser");
-    return userAuth ? JSON.parse(userAuth).token : null;
-}
-
-export function getUsername() {
-    const userAuth = localStorage.getItem("authUser");
-    return userAuth ? JSON.parse(userAuth).username : "";
-}
-
 
 export function parseJwt(token) {
     const base64Url = token.split('.')[1];
