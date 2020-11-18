@@ -74,10 +74,11 @@ export const createGetFailureMethod = (entityType, error) => {
     };
 };
 
-export const createPostMethod = (entityType, payload) => {
+export const createPostMethod = (entityType, payload, apiHandler) => {
     return {
         type: buildActionType(entityType, POST),
         payload: payload,
+        apiHandler
     };
 };
 
@@ -94,10 +95,11 @@ export const createPostFailureMethod = (entityType, error) => {
         result: error,
     };
 };
-export const createPutMethod = (entityType, payload) => {
+export const createPutMethod = (entityType, payload, apiHandler) => {
     return {
         type: buildActionType(entityType, UPDATE),
         payload: payload,
+        apiHandler
     };
 };
 

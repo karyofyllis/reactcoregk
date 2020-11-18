@@ -57,18 +57,18 @@ const getEntityGen = (entity, ApiEndpoint, { params }) =>
     (result) => getEntityFailure(entity, result)
   );
 
-const createEntityGen = (entity, ApiEndpoint, { payload }) =>
+const createEntityGen = (entity, ApiEndpoint, options) =>
   postEntityGen(
     ApiEndpoint[entity],
-    payload,
+    options,
     (result) => createEntitySuccess(entity, result),
     (result) => createEntityFailure(entity, result)
   );
 
-const updateEntityGen = (entity, ApiEndpoint, { payload }) =>
+const updateEntityGen = (entity, ApiEndpoint, options) =>
   putEntityGen(
     ApiEndpoint[entity],
-    payload,
+    options,
     (result) => updateEntitySuccess(entity, result),
     (result) => updateEntityFailure(entity, result)
   );

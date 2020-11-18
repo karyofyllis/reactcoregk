@@ -1,6 +1,6 @@
 {
   "name": "reactcoregk",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "description": "A core library containing boilerplate code and many helper functions.",
   "main": "index.js",
   "scripts": {

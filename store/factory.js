@@ -22,25 +22,40 @@ export function* fetchEntityGen(url, params, successCallback, errorCallback) {
     }
 }
 
-export function* postEntityGen(url, data, successCallback, errorCallback) {
+export function* postEntityGen(url, options, successCallback, errorCallback) {
+    const data = options.payload
+    const apiHandler = options.apiHandler
     try {
         const response = yield call(postEntity, url, data);
-        const entityUrl = url + "/" + response.id;
-        const entity = yield call(fetchEntity, entityUrl);
-        yield put(successCallback(entity));
+        if (apiHandler?.refreshId) {
+            const entityUrl = url + "/" + response.id;
+            const entity = yield call(fetchEntity, entityUrl);
+            yield put(successCallback(entity));
+        } else {
+            yield put(successCallback(response));
+        }
 
     } catch (error) {
         yield put(errorCallback(error.message));
     }
 }
 
-export function* putEntityGen(url, data, successCallback, errorCallback) {
+export function* putEntityGen(url, options, successCallback, errorCallback) {
+    const data = options.payload
+    const apiHandler = options.apiHandler
+    let finalUrl = url;
+    if (apiHandler?.appendId) {
+        finalUrl += "/" + data.id;
+    }
     try {
-        yield call(putEntity, url, data);
-        const entityUrl = url + "/" + data.id;
-        const entity = yield call(fetchEntity, entityUrl);
-        yield put(successCallback(entity));
-
+        const result = yield call(putEntity, finalUrl, data);
+        if (apiHandler?.refreshId) {
+            const entityUrl = url + "/" + data.id;
+            const entity = yield call(fetchEntity, entityUrl);
+            yield put(successCallback(entity));
+        } else {
+            yield put(successCallback(result));
+        }
     } catch (error) {
         yield put(errorCallback(error.message));
     }
