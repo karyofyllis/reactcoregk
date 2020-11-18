@@ -10,9 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91f20045-391e-4695-900b-49c77bd5f117" name="Default Changelist" comment="Add dependencies">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="91f20045-391e-4695-900b-49c77bd5f117" name="Default Changelist" comment="Rename readme">
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +59,7 @@
       <workItem from="1605695891357" duration="1380000" />
       <workItem from="1605704772082" duration="1461000" />
       <workItem from="1605711877656" duration="224000" />
-      <workItem from="1605712524677" duration="35000" />
+      <workItem from="1605712524677" duration="69000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1605542234379</created>
@@ -168,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605711989788</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Rename readme">
+      <created>1605712576288</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1605712576288</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +205,8 @@
     <MESSAGE value="Fix default identifier" />
     <MESSAGE value="Add readme" />
     <MESSAGE value="Add dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add dependencies" />
+    <MESSAGE value="Rename readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename readme" />
   </component>
   <component name="WindowStateProjectService">
     <state x="78" y="309" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605696672509">
