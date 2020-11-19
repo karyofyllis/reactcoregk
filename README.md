@@ -216,12 +216,13 @@ import {entityType} from "./module";
 import {createDeleteMethod, createGetAllMethod, createPostMethod, createPutMethod} from "reactcoregk/store/actions";
 
 // This handler will manage the path of update and the state once the action was succesfull
-const apiHandler = new ApiHandler(appendId: true, refreshId: false, method: "default")
-// if apiHandler.appendId = true then the path would be users/{id} else the path would be /users
-
-// if apiHandler.refreshId = true then after saving or updating the user the GET /users/{id} will be called and pass the new user to sate
-// otherwise will pass the response to the state
-
+const apiHandler = new ApiHandler(
+                                    appendId: true, // if true then the path would be users/{id} else the path would be /users
+                                    refreshId: false, // if true then after saving or updating the user the GET /users/{id} will be called and pass the new user to sate otherwise will pass the response to the state
+                                    headers: {}, // custom headers
+                                    method: "default" // is used for updates only with POST request method. If you want to update your entity use everytime createPutMethod()
+                                                      // if you want to update with POST method then pass the apiHandler.method = "POST"
+                                )
 // method is used for updates only with POST request method. If you want to update your entity use everytime createPutMethod()
 // if you want to update with POST method then pass the apiHandler.method = "POST"
 
