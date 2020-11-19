@@ -52,7 +52,7 @@ export function* putEntityGen(url, options, successCallback, errorCallback) {
     if (apiHandler.appendId) {
         finalUrl += "/" + data.id;
     }
-    const requestEntity = apiHandler.method = "POST" ? postEntity : putEntity
+    const requestEntity = apiHandler.method === "POST" ? postEntity : putEntity
     try {
         const result = yield call(requestEntity, finalUrl, data, apiHandler.headers);
         if (apiHandler.refreshId) {
