@@ -12,12 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="91f20045-391e-4695-900b-49c77bd5f117" name="Default Changelist" comment="Update version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/apiHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/apiHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/hooks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/factory.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/factory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/saga.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/saga.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +65,7 @@
       <workItem from="1605712524677" duration="109000" />
       <workItem from="1605714026700" duration="87000" />
       <workItem from="1605714800117" duration="701000" />
-      <workItem from="1605774533652" duration="751000" />
+      <workItem from="1605774533652" duration="1467000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1605542234379</created>
@@ -197,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605714091113</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Pass axios headers through ApiHandler">
+      <created>1605775350729</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1605775350729</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,7 +234,8 @@
     <MESSAGE value="Rename readme" />
     <MESSAGE value="Update version" />
     <MESSAGE value="Remove axios headers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove axios headers" />
+    <MESSAGE value="Pass axios headers through ApiHandler" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pass axios headers through ApiHandler" />
   </component>
   <component name="WindowStateProjectService">
     <state x="78" y="309" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605696672509">
@@ -242,19 +246,19 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="597" y="540" key="#com.intellij.fileTypes.FileTypeChooser/551.1463.1440.821/0.23.2560.1417@0.23.2560.1417" timestamp="1605535265067" />
-    <state x="213" y="411" key="Vcs.Push.Dialog.v2" timestamp="1605714093394">
+    <state x="213" y="411" key="Vcs.Push.Dialog.v2" timestamp="1605775355532">
       <screen x="0" y="23" width="2560" height="1341" />
     </state>
     <state x="213" y="433" key="Vcs.Push.Dialog.v2/551.1463.1440.821/0.23.2560.1417@0.23.2560.1417" timestamp="1605712619741" />
     <state x="213" y="433" key="Vcs.Push.Dialog.v2/551.1463.1440.822/0.23.2560.1417@0.23.2560.1417" timestamp="1605645054067" />
-    <state x="213" y="411" key="Vcs.Push.Dialog.v2/551.1463.1440.877/0.23.2560.1341@0.23.2560.1341" timestamp="1605714093394" />
+    <state x="213" y="411" key="Vcs.Push.Dialog.v2/551.1463.1440.877/0.23.2560.1341@0.23.2560.1341" timestamp="1605775355532" />
     <state x="426" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605542414810">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="426" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/551.1463.1440.821/0.23.2560.1417@0.23.2560.1417" timestamp="1605542414810" />
-    <state x="318" y="448" width="586" height="490" key="find.popup" timestamp="1605627889082">
+    <state x="318" y="448" width="586" height="490" key="find.popup" timestamp="1605775764511">
       <screen x="0" y="23" width="2560" height="1341" />
     </state>
-    <state x="318" y="448" width="586" height="490" key="find.popup/551.1463.1440.877/0.23.2560.1341@0.23.2560.1341" timestamp="1605627889082" />
+    <state x="318" y="448" width="586" height="490" key="find.popup/551.1463.1440.877/0.23.2560.1341@0.23.2560.1341" timestamp="1605775764511" />
   </component>
 </project>

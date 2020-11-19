@@ -128,13 +128,13 @@ const useEntityProgress = (context, onClose) => {
     return [busy, error];
 };
 
-const useFetch = (url, initialState, pollTimeout) => {
+const useFetch = (url, headers, initialState, pollTimeout) => {
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
 
     const getData = useCallback((url, callback) => {
-        fetchData(url)
+        fetchData(url, headers)
             .then((data) => {
                 setData(data);
                 setError(null);
@@ -170,7 +170,7 @@ const useFetch = (url, initialState, pollTimeout) => {
     return [isLoading, data, error, setData];
 };
 
-const usePaging = (url, { size, page, identifier }, params) => {
+const usePaging = (url, headers, { size, page, identifier }, params) => {
     const [isLoading, setIsLoading] = useState(false);
     const [allContents, setAllContents] = useState([]);
     const [data, setData] = useState(new Paging());
@@ -180,7 +180,7 @@ const usePaging = (url, { size, page, identifier }, params) => {
         if (params) {
             finalUrl += params;
         }
-        fetchData(finalUrl)
+        fetchData(finalUrl, headers)
             .then((data) => {
                 setData(data);
                 callback && callback();
