@@ -373,12 +373,11 @@ const useSortHandler = (by = "", direction = "asc") => {
 
 const useEntityFetch = (context, fetchData, fetchDependency) => {
     const results = context.getAll.result.length;
-    const isLoading = context.getAll.isLoading;
     useEffect(() => {
-        if (results === 0 && !isLoading) {
+        if (results === 0) {
             fetchData();
         }
-    }, [fetchData, isLoading, results, fetchDependency]);
+    }, [fetchData, results, fetchDependency]);
 
     return context.getAll.isLoading;
 };
