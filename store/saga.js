@@ -33,26 +33,26 @@ const deleteEntitySuccess = (entityType, result) => createDeleteSuccessMethod(en
 const deleteEntityFailure = (entityType, result) => createDeleteFailureMethod(entityType, result);
 const customAction = (entityType, result) => createCustomAction(entityType, result);
 
-const getAllEntitiesGen = (entity, ApiEndpoint, {params}) =>
+const getAllEntitiesGen = (entity, ApiEndpoint, options) =>
   fetchAllGen(
       ApiEndpoint[entity],
-      params,
+      options,
     (result) => getAllEntitySuccess(entity, result),
     (result) => getAllEntityFailure(entity, result)
   );
 
-const getAllPageableEntitiesGen = (entity, ApiEndpoint, {params}) =>
+const getAllPageableEntitiesGen = (entity, ApiEndpoint, options) =>
   fetchAllGen(
       ApiEndpoint[entity],
-      params,
+      options,
     (result) => getAllPageableEntitySuccess(entity, result),
     (result) => getAllPageableEntityFailure(entity, result)
   );
 
-const getEntityGen = (entity, ApiEndpoint, { params }) =>
+const getEntityGen = (entity, ApiEndpoint, options ) =>
   fetchEntityGen(
     ApiEndpoint[entity],
-    params,
+      options,
     (result) => getEntitySuccess(entity, result),
     (result) => getEntityFailure(entity, result)
   );
@@ -73,10 +73,10 @@ const updateEntityGen = (entity, ApiEndpoint, options) =>
     (result) => updateEntityFailure(entity, result)
   );
 
-const deleteEntityGen = (entity, ApiEndpoint, { payload }) =>
+const deleteEntityGen = (entity, ApiEndpoint,  options) =>
   delEntityGen(
     ApiEndpoint[entity],
-    payload,
+    options,
     (result) => deleteEntitySuccess(entity, result),
     (result) => deleteEntityFailure(entity, result)
   );

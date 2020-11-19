@@ -53,10 +53,11 @@ export const createAsyncAction = (entityType, type) => {
     return {request, success, failure}
 };
 
-export const createGetMethod = (entityType, params) => {
+export const createGetMethod = (entityType, params, apiHandler) => {
     return {
         type: buildActionType(entityType, GET),
         params: params,
+        apiHandler
     };
 };
 
@@ -116,10 +117,11 @@ export const createPutFailureMethod = (entityType, error) => {
         result: error,
     };
 };
-export const createDeleteMethod = (entityType, payload) => {
+export const createDeleteMethod = (entityType, payload, apiHandler) => {
     return {
         type: buildActionType(entityType, DELETE),
         payload: payload,
+        apiHandler
     };
 };
 
@@ -137,10 +139,11 @@ export const createDeleteFailureMethod = (entityType, error) => {
     };
 };
 
-export const createGetAllMethod = (entityType, params) => {
+export const createGetAllMethod = (entityType, params, apiHandler) => {
     return {
         type: buildActionType(entityType, GET_ALL),
         params: params,
+        apiHandler
     };
 };
 
@@ -157,10 +160,11 @@ export const createGetAllFailureMethod = (entityType, error) => {
         result: error,
     };
 };
-export const createGetAllPageableMethod = (entityType, params) => {
+export const createGetAllPageableMethod = (entityType, params, apiHandler) => {
     return {
         type: buildActionType(entityType, GET_ALL_PAGEABLE),
         params: params,
+        apiHandler
     };
 };
 

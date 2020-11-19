@@ -1,6 +1,3 @@
-import axios from "axios";
-
-
 export function parseJwt(token) {
     const base64Url = token.split('.')[1];
     const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -12,30 +9,6 @@ export function parseJwt(token) {
 }
 
 
-function handleError(err) {
-    if (err.response) {
-        const errorMsg = err.response.data.message;
-        if (errorMsg) throw new Error(err.response.data.message);
-        throw new Error(`Something went wrong. Error code: ${err.request.status}.`);
-    }
-    throw new Error("Something went wrong.");
-}
-
-export const fetchData = (url) =>
-    axios
-        .get(url)
-        .then((res) => res.data)
-        .catch(handleError);
-
-export const postData = (url, data) =>
-    axios
-        .post(url, data)
-        .then((res) => res.data)
-        .catch(handleError);
-
-export const deleteData = (url, data) =>
-    axios.delete(url, { data }).catch(handleError);
-
 export const formatBytes = (bytes, decimals = 2) => {
     if (bytes === 0) return "0 Bytes";
     const k = 1024;
@@ -46,16 +19,6 @@ export const formatBytes = (bytes, decimals = 2) => {
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
 };
 
-export const getArrayFrom = (enumeration) => {
-    const array = [];
-    for (let prop in enumeration) {
-        array.push({
-            label: enumeration[prop],
-            value: prop,
-        });
-    }
-    return array;
-};
 
 export const createOptions = (array, labelProp, valueProp = "id") => {
     return array.map((x) => ({
@@ -67,7 +30,7 @@ export const createOptions = (array, labelProp, valueProp = "id") => {
 export const createMap = (array, prop = "id") =>
     new Map(array.map((item) => [item[prop], item]));
 
-export function makeid(length = 10) {
+export function makeId(length = 10) {
     let result = "";
     const characters =
         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -94,41 +57,6 @@ export function compareProp(a, b, prop = "position") {
     }
     return 0;
 }
-
-export const downloadFile = (exportURL, fileName, fileExtension, showTime) => {
-    const currentdate = new Date();
-    const datetime =
-        "Last Sync: " +
-        currentdate.getDate() +
-        "/" +
-        (currentdate.getMonth() + 1) +
-        "/" +
-        currentdate.getFullYear() +
-        " @ " +
-        currentdate.getHours() +
-        ":" +
-        currentdate.getMinutes() +
-        ":" +
-        currentdate.getSeconds();
-
-    return fetch(exportURL, {
-        method: "GET",
-        mode: "cors",
-        headers: getAxiosConfig().headers
-    })
-        .then(function (resp) {
-            return resp.blob();
-        })
-        .then(function (blob) {
-            var exportURL = window.URL.createObjectURL(blob);
-            var a = document.createElement("a");
-            a.href = exportURL;
-            a.download = fileName + (showTime ? `_${datetime}` : "") + "." + fileExtension;
-            document.body.appendChild(a); // we need to append the element to the dom -> otherwise it will not work in firefox
-            a.click();
-            a.remove();
-        });
-};
 
 export function kFormatter(num) {
     return Math.abs(num) > 999 ? Math.sign(num) * ((Math.abs(num) / 1000).toFixed(1)) + 'k' : Math.sign(num) * Math.abs(num)

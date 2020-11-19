@@ -1,46 +1,51 @@
 import axios from "axios";
 
-const fetchAll = async (url) => {
+const fetchAll = async (url, headers) => {
+    const config = { headers };
     return axios
-        .get(url)
+        .get(url, config)
         .then((response) => {
             return response.data;
         })
         .catch(handleError);
 };
 
-const fetchEntity = async (url) => {
+const fetchEntity = async (url, headers) => {
+    const config = { headers };
     return axios
-        .get(url)
+        .get(url, config)
         .then((response) => {
             return response.data;
         })
         .catch(handleError);
 };
 
-const postEntity = async (url, data) => {
+const postEntity = async (url, data, headers) => {
+    const config = { headers };
     return axios
-        .post(url, data)
+        .post(url, data, config)
         .then((response) => {
             return response.data;
         })
         .catch(handleError);
 };
 
-const putEntity = async (url, data) => {
+const putEntity = async (url, data, headers) => {
     // const finalUrl = url + '/' + data.id
+    const config = { headers };
     return axios
-        .put(url, data)
+        .put(url, data, config)
         .then((response) => {
             return response.data;
         })
         .catch(handleError);
 };
 
-const deleteEntity = async (url, data) => {
+const deleteEntity = async (url, data, headers) => {
     const finalUrl = url + '/' + data.id
+    const config = { headers };
     return axios
-        .delete(finalUrl)
+        .delete(finalUrl, config)
         .catch(handleError);
 };
 
