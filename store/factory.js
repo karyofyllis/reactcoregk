@@ -4,7 +4,7 @@ import ApiHandler from "../models/apiHandler";
 
 
 export function* fetchAllGen(url, options, successCallback, errorCallback) {
-    const params = options.options
+    const params = options.params
     const apiHandler = options.apiHandler || new ApiHandler()
     try {
         const finalUrl = url + (params || "");
@@ -16,7 +16,7 @@ export function* fetchAllGen(url, options, successCallback, errorCallback) {
 }
 
 export function* fetchEntityGen(url, options, successCallback, errorCallback) {
-    const params = options.options
+    const params = options.params
     const apiHandler = options.apiHandler || new ApiHandler()
     try {
         const finalUrl = url + "/" + params;

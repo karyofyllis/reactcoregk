@@ -53,7 +53,8 @@ export const handleAsyncState = (state, action, propertyName) => {
     }
 };
 
-export const handleCommonState = (state, actionType, action, entityType, identifierProp = "id") => {
+export const handleCommonState = (state, action, identifierProp = "id") => {
+    const actionType = action.type.split(".")[1];
     switch (actionType) {
         case ActionTypes.GET_ALL:
             return {
