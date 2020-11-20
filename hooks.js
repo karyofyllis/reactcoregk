@@ -371,13 +371,22 @@ const useSortHandler = (by = "", direction = "asc") => {
     };
 };
 
-const useEntityFetch = (context, fetchData, fetchDependency) => {
+const useDependency = (context, fetchData, fetchDependency) => {
     const results = context.getAll.result.length;
+    const [dep, setDep] = useState(fetchDependency)
+
     useEffect(() => {
         if (results === 0) {
             fetchData();
         }
     }, [fetchData, results, fetchDependency]);
+
+    useEffect(() => {
+        if (fetchDependency !== dep) {
+            fetchData()
+            setDep(fetchDependency)
+        }
+    }, [dep, fetchData, fetchDependency])
 
     return context.getAll.isLoading;
 };
@@ -396,5 +405,6 @@ export {
     useDropzone,
     usePaging,
     useSortHandler,
-    useEntityFetch
+    useEntityFetch,
+    useDependency
 };
