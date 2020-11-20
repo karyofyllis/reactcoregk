@@ -184,7 +184,7 @@ const User = (state = initialState, action) => {
 
   // Finally you need to declare the **identifier property** of this entity. 
   // This is very importand for actions and reducers to work properly because under the hood they use this identifier for the crud operations and the state management.
-  return  handleCommonState(state, action, "id");
+  return  handleCommonState(state, actionType, action, "id");
 };
 
 export default User;
