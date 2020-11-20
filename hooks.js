@@ -405,6 +405,5 @@ export {
     useDropzone,
     usePaging,
     useSortHandler,
-    useEntityFetch,
     useDependency
 };

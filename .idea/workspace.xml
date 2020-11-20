@@ -12,10 +12,8 @@
   <component name="ChangeListManager">
     <list default="true" id="91f20045-391e-4695-900b-49c77bd5f117" name="Default Changelist" comment="Fix important bug on update entity action">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/hooks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/factory.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/factory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +69,9 @@
       <workItem from="1605779170049" duration="199000" />
       <workItem from="1605782397815" duration="143000" />
       <workItem from="1605867038372" duration="265000" />
-      <workItem from="1605878589477" duration="200000" />
+      <workItem from="1605878589477" duration="271000" />
+      <workItem from="1605878867152" duration="28000" />
+      <workItem from="1605879489532" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1605542234379</created>
@@ -241,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605867270516</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="1. Fix bug on search with params&#10;2. Remove unnecessary parameters from handleCommonState">
+      <created>1605878843542</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1605878843542</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,7 +288,8 @@
     <MESSAGE value="Fix important bug on update entity action" />
     <MESSAGE value="Fix bug on useEntityFetch that causes infinite calls" />
     <MESSAGE value="Replace useEntityFetch with useDependency to manage easier views that need data from the api." />
-    <option name="LAST_COMMIT_MESSAGE" value="Replace useEntityFetch with useDependency to manage easier views that need data from the api." />
+    <MESSAGE value="1. Fix bug on search with params&#10;2. Remove unnecessary parameters from handleCommonState" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Fix bug on search with params&#10;2. Remove unnecessary parameters from handleCommonState" />
   </component>
   <component name="WindowStateProjectService">
     <state x="78" y="309" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605696672509">
@@ -292,10 +300,10 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="597" y="540" key="#com.intellij.fileTypes.FileTypeChooser/551.1463.1440.821/0.23.2560.1417@0.23.2560.1417" timestamp="1605535265067" />
-    <state x="213" y="433" key="Vcs.Push.Dialog.v2" timestamp="1605867287896">
+    <state x="213" y="433" key="Vcs.Push.Dialog.v2" timestamp="1605878848380">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="213" y="433" key="Vcs.Push.Dialog.v2/551.1463.1440.821/0.23.2560.1417@0.23.2560.1417" timestamp="1605867287896" />
+    <state x="213" y="433" key="Vcs.Push.Dialog.v2/551.1463.1440.821/0.23.2560.1417@0.23.2560.1417" timestamp="1605878848380" />
     <state x="213" y="433" key="Vcs.Push.Dialog.v2/551.1463.1440.822/0.23.2560.1417@0.23.2560.1417" timestamp="1605782522990" />
     <state x="213" y="411" key="Vcs.Push.Dialog.v2/551.1463.1440.877/0.23.2560.1341@0.23.2560.1341" timestamp="1605776596637" />
     <state x="426" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605542414810">
