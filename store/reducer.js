@@ -143,6 +143,10 @@ export const handleCommonState = (state, actionType, action, identifierProp = "i
                 },
                 update: {
                     ...state.update,
+                    result: {
+                        ...action.result,
+                        id: action.result[identifierProp],
+                    },
                     error: null,
                     isLoading: false,
                 },
@@ -194,6 +198,10 @@ export const handleCommonState = (state, actionType, action, identifierProp = "i
                 ...state,
                 create: {
                     ...state.create,
+                    result: {
+                        ...action.result,
+                        id: action.result[identifierProp],
+                    },
                     error: null,
                     isLoading: false,
                 },
