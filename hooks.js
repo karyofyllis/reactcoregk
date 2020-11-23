@@ -373,13 +373,14 @@ const useSortHandler = (by = "", direction = "asc") => {
 
 const useDependency = (context, fetchData, fetchDependency) => {
     const results = context.getAll.result.length;
+    const pageableResults = context.getAllPageable.result.length;
     const [dep, setDep] = useState(fetchDependency)
 
     useEffect(() => {
-        if (results === 0) {
+        if (results === 0 && pageableResults === 0) {
             fetchData();
         }
-    }, [fetchData, results, fetchDependency]);
+    }, [fetchData, results, fetchDependency, pageableResults]);
 
     useEffect(() => {
         if (fetchDependency !== dep) {

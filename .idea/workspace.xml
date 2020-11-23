@@ -10,9 +10,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91f20045-391e-4695-900b-49c77bd5f117" name="Default Changelist" comment="Add action type to reducers">
+    <list default="true" id="91f20045-391e-4695-900b-49c77bd5f117" name="Default Changelist" comment="Update doc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/hooks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +72,8 @@
       <workItem from="1605878589477" duration="271000" />
       <workItem from="1605878867152" duration="28000" />
       <workItem from="1605879489532" duration="67000" />
-      <workItem from="1605879637403" duration="358000" />
+      <workItem from="1605879637403" duration="388000" />
+      <workItem from="1606121770656" duration="88000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1605542234379</created>
@@ -270,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605879697592</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Update doc">
+      <created>1605880004494</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1605880004494</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,7 +321,8 @@
     <MESSAGE value="1. Fix bug on search with params&#10;2. Remove unnecessary parameters from handleCommonState" />
     <MESSAGE value="Fix hook exports" />
     <MESSAGE value="Add action type to reducers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add action type to reducers" />
+    <MESSAGE value="Update doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update doc" />
   </component>
   <component name="WindowStateProjectService">
     <state x="78" y="309" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605696672509">
@@ -324,10 +333,10 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="597" y="540" key="#com.intellij.fileTypes.FileTypeChooser/551.1463.1440.821/0.23.2560.1417@0.23.2560.1417" timestamp="1605535265067" />
-    <state x="213" y="433" key="Vcs.Push.Dialog.v2" timestamp="1605879700385">
+    <state x="213" y="433" key="Vcs.Push.Dialog.v2" timestamp="1605880008606">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="213" y="433" key="Vcs.Push.Dialog.v2/551.1463.1440.821/0.23.2560.1417@0.23.2560.1417" timestamp="1605879700385" />
+    <state x="213" y="433" key="Vcs.Push.Dialog.v2/551.1463.1440.821/0.23.2560.1417@0.23.2560.1417" timestamp="1605880008606" />
     <state x="213" y="433" key="Vcs.Push.Dialog.v2/551.1463.1440.822/0.23.2560.1417@0.23.2560.1417" timestamp="1605782522990" />
     <state x="213" y="411" key="Vcs.Push.Dialog.v2/551.1463.1440.877/0.23.2560.1341@0.23.2560.1341" timestamp="1605776596637" />
     <state x="426" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605542414810">
