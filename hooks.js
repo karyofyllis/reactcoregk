@@ -142,7 +142,7 @@ const useFetch = (url, headers, initialState, pollTimeout) => {
             })
             .catch((ex) => {
                 setError(ex);
-                setData(null);
+                setData(initialState);
                 callback && callback();
             });
     }, []);

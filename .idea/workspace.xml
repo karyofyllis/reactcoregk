@@ -10,7 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91f20045-391e-4695-900b-49c77bd5f117" name="Default Changelist" comment="Fix useDependency bug">
+    <list default="true" id="91f20045-391e-4695-900b-49c77bd5f117" name="Default Changelist" comment="Fix useFetch initial state">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hooks.js" beforeDir="false" afterPath="$PROJECT_DIR$/hooks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
@@ -77,7 +77,8 @@
       <workItem from="1606122458662" duration="14000" />
       <workItem from="1606122610479" duration="64000" />
       <workItem from="1606148707261" duration="728000" />
-      <workItem from="1606488572756" duration="37000" />
+      <workItem from="1606488572756" duration="164000" />
+      <workItem from="1606493434264" duration="24000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1605542234379</created>
@@ -303,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606148904944</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Fix useFetch initial state">
+      <created>1606488627060</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1606488627060</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +330,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fix sagas" />
     <MESSAGE value="add useEntityFetch hook" />
     <MESSAGE value="refactor useEntityFetch" />
     <MESSAGE value="fix useMasterDetailWithDialog bug" />
@@ -347,7 +354,8 @@
     <MESSAGE value="Add pageable support on useDependency hook." />
     <MESSAGE value="Fix useDependency bug" />
     <MESSAGE value="Keep currently created and updated entity to store." />
-    <option name="LAST_COMMIT_MESSAGE" value="Keep currently created and updated entity to store." />
+    <MESSAGE value="Fix useFetch initial state" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix useFetch initial state" />
   </component>
   <component name="WindowStateProjectService">
     <state x="78" y="309" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605696672509">
@@ -358,10 +366,10 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="597" y="540" key="#com.intellij.fileTypes.FileTypeChooser/551.1463.1440.821/0.23.2560.1417@0.23.2560.1417" timestamp="1605535265067" />
-    <state x="213" y="411" key="Vcs.Push.Dialog.v2" timestamp="1606148907595">
+    <state x="213" y="411" key="Vcs.Push.Dialog.v2" timestamp="1606488629914">
       <screen x="0" y="23" width="2560" height="1341" />
     </state>
-    <state x="213" y="411" key="Vcs.Push.Dialog.v2/0.23.2560.1341@0.23.2560.1341" timestamp="1606148907595" />
+    <state x="213" y="411" key="Vcs.Push.Dialog.v2/0.23.2560.1341@0.23.2560.1341" timestamp="1606488629914" />
     <state x="213" y="433" key="Vcs.Push.Dialog.v2/551.1463.1440.821/0.23.2560.1417@0.23.2560.1417" timestamp="1606122659098" />
     <state x="213" y="433" key="Vcs.Push.Dialog.v2/551.1463.1440.822/0.23.2560.1417@0.23.2560.1417" timestamp="1605782522990" />
     <state x="213" y="411" key="Vcs.Push.Dialog.v2/551.1463.1440.877/0.23.2560.1341@0.23.2560.1341" timestamp="1605776596637" />
