@@ -130,7 +130,7 @@ const useEntityProgress = (context, onClose) => {
 
 const useFetch = (url, headers, initialState, pollTimeout) => {
     const [isLoading, setIsLoading] = useState(true);
-    const [data, setData] = useState(null);
+    const [data, setData] = useState(initialState);
     const [error, setError] = useState(null);
 
     const getData = useCallback((url, callback) => {
