@@ -6,8 +6,9 @@ export const createOperationState = (
     result = null,
     error = null,
     isLoading = false,
-    all = []
-) => ({ isLoading, error, result, all });
+    all = [],
+    fullFilled = false
+) => ({ isLoading, error, result, all, fullFilled });
 
 export const getCommonState = () => ({
     get: createOperationState({}),
@@ -36,6 +37,7 @@ export const handleAsyncState = (state, action, propertyName) => {
                 [propertyName]: {
                     ...state[propertyName],
                     isLoading: false,
+                    fullFilled: true,
                     result: action.payload,
                 },
             };
@@ -45,6 +47,7 @@ export const handleAsyncState = (state, action, propertyName) => {
                 [propertyName]: {
                     ...state[propertyName],
                     isLoading: false,
+                    fullFilled: true,
                     error: action.payload,
                 },
             };
@@ -74,6 +77,7 @@ export const handleCommonState = (state, actionType, action, identifierProp = "i
                         id: el[identifierProp],
                     })),
                     isLoading: false,
+                    fullFilled: true,
                 },
             };
         case ActionTypes.GET_ALL_FAILURE:
@@ -84,6 +88,7 @@ export const handleCommonState = (state, actionType, action, identifierProp = "i
                     error: action.result,
                     result: [],
                     isLoading: false,
+                    fullFilled: true,
                 },
             };
         case ActionTypes.GET:
@@ -105,6 +110,7 @@ export const handleCommonState = (state, actionType, action, identifierProp = "i
                     },
                     error: null,
                     isLoading: false,
+                    fullFilled: true,
                 },
                 delete: {
                     ...state.delete,
@@ -123,6 +129,7 @@ export const handleCommonState = (state, actionType, action, identifierProp = "i
                     result: {},
                     error: action.result,
                     isLoading: false,
+                    fullFilled: true,
                 },
             };
         case ActionTypes.UPDATE:
@@ -149,6 +156,7 @@ export const handleCommonState = (state, actionType, action, identifierProp = "i
                     },
                     error: null,
                     isLoading: false,
+                    fullFilled: true,
                 },
                 getAll: {
                     ...state.getAll,
@@ -182,6 +190,7 @@ export const handleCommonState = (state, actionType, action, identifierProp = "i
                     ...state.update,
                     error: action.result,
                     isLoading: false,
+                    fullFilled: true,
                 },
             };
         case ActionTypes.POST:
@@ -204,6 +213,7 @@ export const handleCommonState = (state, actionType, action, identifierProp = "i
                     },
                     error: null,
                     isLoading: false,
+                    fullFilled: true,
                 },
                 getAll: {
                     ...state.getAll,
@@ -227,6 +237,7 @@ export const handleCommonState = (state, actionType, action, identifierProp = "i
                     ...state.create,
                     error: action.result,
                     isLoading: false,
+                    fullFilled: true,
                 },
             };
         case ActionTypes.DELETE:
@@ -245,6 +256,7 @@ export const handleCommonState = (state, actionType, action, identifierProp = "i
                     ...state.delete,
                     error: null,
                     isLoading: false,
+                    fullFilled: true,
                 },
                 getAll: {
                     ...state.getAll,
@@ -262,6 +274,7 @@ export const handleCommonState = (state, actionType, action, identifierProp = "i
                     ...state.delete,
                     error: action.result,
                     isLoading: false,
+                    fullFilled: true,
                 },
             };
         case ActionTypes.GET_ALL_PAGEABLE: {
@@ -289,6 +302,7 @@ export const handleCommonState = (state, actionType, action, identifierProp = "i
                             ? action.result.content
                             : [...state.getAllPageable.all, ...action.result.content],
                     isLoading: false,
+                    fullFilled: true,
                 },
             };
         }
@@ -300,6 +314,7 @@ export const handleCommonState = (state, actionType, action, identifierProp = "i
                     error: action.result,
                     result: new Paging(),
                     isLoading: false,
+                    fullFilled: true,
                 },
             };
         default:

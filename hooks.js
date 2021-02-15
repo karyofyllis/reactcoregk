@@ -372,24 +372,16 @@ const useSortHandler = (by = "", direction = "asc") => {
 };
 
 const useDependency = (context, fetchData, fetchDependency) => {
-    const results = context.getAll.result.length;
-    const pageableResults = context.getAllPageable.all.length;
-    const [dep, setDep] = useState(fetchDependency)
+    const fullFilled = context.getAll.fullFilled || context.getAllPageable.fullFilled
+    const isLoading = context.getAll.isLoading || context.getAllPageable.isLoading
 
     useEffect(() => {
-        if (results === 0 && pageableResults === 0) {
+        if (!isLoading && !fullFilled) {
             fetchData();
         }
-    }, [fetchData, results, fetchDependency, pageableResults]);
+    }, [isLoading, fullFilled, fetchData, fetchDependency])
 
-    useEffect(() => {
-        if (fetchDependency !== dep) {
-            fetchData()
-            setDep(fetchDependency)
-        }
-    }, [dep, fetchData, fetchDependency])
-
-    return context.getAll.isLoading;
+    return isLoading;
 };
 
 export {
