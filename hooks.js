@@ -95,7 +95,7 @@ const useEntityProgress = (context, onClose) => {
     const hideLoaderAndClose = useCallback(
         (_) => {
             setBusy(false);
-            onClose(true);
+            onClose && onClose(true);
         },
         [onClose]
     );
