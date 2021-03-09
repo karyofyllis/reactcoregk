@@ -6,8 +6,9 @@ import ApiHandler from "../models/apiHandler";
 export function* fetchAllGen(url, options, successCallback, errorCallback) {
     const params = options.params
     const apiHandler = options.apiHandler || new ApiHandler()
+    const baseUrl = getBaseUrl(url, apiHandler)
     try {
-        const finalUrl = url + (params || "");
+        const finalUrl = baseUrl + (params || "");
         const response = yield call(fetchAll, finalUrl, apiHandler.headers);
         yield put(successCallback(response));
     } catch (error) {
