@@ -5,6 +5,6 @@ export default class ApiHandler {
         this.method = method
         this.headers = headers
         this.params = params
-        this.overrideEndpoint = overrideUrl
+        this.endpoint = overrideUrl
     }
 }
