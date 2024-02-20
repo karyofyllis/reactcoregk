@@ -1,6 +1,6 @@
 {
   "name": "reactcoregk",
-  "version": "2.2.5",
+  "version": "2.3.0",
   "description": "A core library containing boilerplate code and many helper functions.",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/karyofyllis/reactcoregk#readme",
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^1.6.4",
     "redux-saga": "^1.1.3"
   }
 }
